@@ -1,0 +1,11 @@
+difference between snake_case, pascalcase and camelcase?
+
+Snake_case, PascalCase, and CamelCase are three common naming conventions used in programming.
+
+Snake_case: In snake_case, each word is separated by an underscore and all letters are lowercase. This naming convention is commonly used in many programming languages, including Python, for naming variables, functions, and other constructs. For example: customer_information
+
+PascalCase: In PascalCase (also known as UpperCamelCase), each word is capitalized and there are no spaces or underscores between words. This naming convention is commonly used for naming classes in many programming languages, including C# and Java. For example: CustomerInformation
+
+CamelCase: In CamelCase (also known as lowerCamelCase), the first letter of the first word is lowercase and each subsequent word is capitalized, with no spaces or underscores between words. This naming convention is commonly used for naming variables and functions in many programming languages, including JavaScript. For example: customerInformation
+
+It is important to follow the naming conventions of the programming language you are using, as it makes your code more readable and easier to understand for other developers.

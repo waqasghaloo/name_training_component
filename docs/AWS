@@ -1,0 +1,5 @@
+Connection with AWS requires 'boto3' package installed
+using 'pip install boto3'
+
+Create a configuration file 'config.ini' inside config folder
+Read it used 'configparser' module inside utils and named as 'configparser.py'
