@@ -3,6 +3,18 @@ import numpy as np
 
 from sklearn import datasets
 
+
+class Decision_Node:
+    """Decision node asks a question
+        This holds reference to question, left_branch and right_branch
+    """
+
+    def __init__(self,question, left_branch, right_branch):
+        self.question = question
+        self.left_branch = left_branch
+        self.right_branch = right_branch
+
+
 def load_dataset():
     # returns 2d array with 2 features and 1 target column
     return np.c_[ datasets.load_iris().data[:,:2], datasets.load_iris().target ]  
@@ -70,6 +82,9 @@ def best_split(data):
     best_question = None
 
     split_value = 0
+    left_branch = None
+    right_branch = None
+
     # X = data.data
     # y = data.target
 
@@ -94,20 +109,34 @@ def best_split(data):
                 best_gain = gain
                 best_question = i
                 split_value = j
+                left_branch = left_subtree
+                right_branch = right_subtree
+
+    
+                
                 
 
 
-    return best_gain, best_question
+    return best_gain, best_question, left_branch, right_branch
 
 
-    print('Checkpoint')
-    # Find question to ask
+def build_tree(data):
+    best_gain, best_question, left_branch, right_branch = best_split(data)
+    print(best_question, best_gain)
+
+    if best_gain == 0:
+        print('Calling Leaf function')
+
+    build_tree(left_branch)
+    build_tree(right_branch)
+
+    return Decision_Node(question, left_branch, right_branch)
+
 
 
 data = load_dataset()
-# X = data.data[:,:2]
-# y = data.target
 
-best_split(data)
+node = build_tree(data)
 
-# def question()
+
+
